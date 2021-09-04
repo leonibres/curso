@@ -5,8 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi primera web</title>
+    <style>
+      table, th, td {
+          border: 1px solid black;
+
+      }
+    </style>
 </head>
 <body>
+  <!-- vmos a crear tablas: -->
+  <table style="width: 500px;">
+    <thead>
+      <tr>
+        <th>producto</th>
+        <th>precio</th>
+      </tr>
+    </thead>
+   <tbody>
+    <tr>
+      <td>Hola leoni</td>
+      <td>gratis</td>
+    </tr>
+    <tr>
+      <td>chanchito feliz</td>
+      <td>$39.000</td>
+    </tr>
+    <tr>
+      <td>chanchito feliz muy feliz</td>
+      <td>$79.000</td>
+    </tr>
+   </tbody>
+   <tfoot>
+     <td></td>
+     <td>Total: $118.000</td>
+   </tfoot>
+  </table>
   <!-- lista no ordenada -->
   <ul>
     <li>elemento 1</li>
@@ -17,16 +50,24 @@
 
   <!-- lista ordenada -->
   <ol>
-    <li>elemento 1</li> <!--si le agregamos value="", esta tomara el numero de la lista de donde queremos -->
+    <li value="50">elemento 1</li> <!--si le agregamos value="", esta tomara el numero de la lista de donde queremos -->
     <li>elemento 2</li>
     <li>elemento 3</li>
     <li>elemento 4</li>
+    <li>
+      <!-- vamos a anidar listas asi: -->
+      <ol>
+        <li style="list-style-type: lower-alpha;">sub elemento 1</li>
+        <li style="list-style-type: lower-alpha;">sub elemento 2</li>
+        <li style="list-style-type: lower-alpha;">sub elemesnto 3</li>
+      </ol>
+    </li>
   </ol>
 
 <!-- creamos formularios asi: -->
 
   <form action="/formulario" method="POS">
-    
+
     <label for="nombre">Nombre</label>
     <input value="chanchito" type="text" id="nombre" name="nombre" placeholder="chancito feliz"/>
     <br>
