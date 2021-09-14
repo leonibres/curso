@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulario en Html</title>
+</head>
+
+<body>
+  <!-- vamos a crear un formulario HTML -->
+  <form action="">
+    <fieldset>
+      <legend>Primera Parte</legend>
+      <label for="nombre">Nombre
+        <input id="nombre" value="leoni" maxlength="20" placeholder="Escribe tu nombre" type="text" />
+      </label>
+      <br>
+      <!-- espacio para solicitar la edad del trabajador -->
+      <label for="edad">Edad
+        <input type="range" min="18" max="36" step="1">
+      </label>
+      <!-- espacio para el salario y el tiempo min y max de años en la empresa -->
+      <label for="tiempo_en_la_empresa">
+        Salario del trabajador $
+        <input id="tiempo_en_la_empresa" type="number" min="100" max="500" step="20" value="100">
+      </label>
+      <br><br>
+      <!-- espacio para clave y contraseña -->
+      <label for="clave">Ingrese la clave
+        <input type="password">
+      </label>
+      <br><br>
+      <!-- para escojer la fecha -->
+      <label for="ingreso">ingreso de la empresa
+        <input type="date" min="29-08-2021">
+      </label>
+      <br><br>
+      <!-- barrade color -->
+      <label for="barra">Barra de color
+        <input type="color">
+      </label>
+      <br><br>
+      <!-- para cargar multiples archivos -->
+      <label for="archivo">Subir Archivo
+        <input type="file" multiple>
+      </label>
+      <br><br>
+      <!-- para el correo -->
+      <label for="emal">Email
+        <input type="email">
+      </label>
+    </fieldset>
+    <fieldset>
+      <legend>Parte dos</legend>
+      <!-- opciones paa escojer una ciudad -->
+      <select name="" id="">
+
+        <option value="1">Medellin</option>
+        <option value="2">Bogota</option>
+        <option value="3">Cali</option>
+        <option value="4">Valledupar</option>
+        <option value="5">Envigado</option>
+        <option value="6">Sabaneta</option>
+      </select><br><br>
+      <!-- creamos un boton estado civil-->
+      <label for="">Casado<input type="radio" name="estado_civil"></label>
+      <label for="">Union Libre<input type="radio" name="estado_civil"></label>
+      <label for="">Divorsiado<input type="radio" name="estado_civil"></label>
+      <label for="">Viudo(a)<input type="radio" name="estado_civil"></label>
+      <label for="">Soltero(a)<input type="radio" name="estado_civil" checked="checked"></label>
+    </fieldset>
+  </form>
+</body>
+</html>
