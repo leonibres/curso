@@ -1,0 +1,170 @@
+/* le colocamos sombreado a la barra nav */
+
+.topheader {
+    box-shadow: 0 4px 5px var(--navbar-shallow-color);
+    position: fixed;
+    background-color: var(--theme-color);
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+
+/* hace que el bloque del logo este hacia izq y el bloque menú a la derecha */
+
+.topnav {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    max-width: 980px;
+    /* le colocamos un ancho max al nav */
+    margin: 0 auto;
+}
+
+
+/* Logo */
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+
+/* que bordes redondeados del img logo */
+
+.logo img {
+    border-radius: 50%;
+}
+
+
+/* Menu */
+
+.menu {
+    display: flex;
+    list-style: none;
+    /* quitamos puntitos alas ul por defecto*/
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    padding: 0 15px;
+}
+
+
+/* añadimos stilos a los enlaces que estan dentro del menú */
+
+.menu a {
+    color: var(--text-color);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 50px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+
+/*hacemos el seudo selector para la linea inferior naranja al menu cuando pasamos el cursor */
+
+.menu a::after {
+    content: "";
+    background-color: var(--secundary-color);
+    position: absolute;
+    left: 0;
+    top: calc(100% + 4px);
+    width: 100%;
+    height: 4px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+
+/* hacemos que solo el menu seleccionado se ponga de otro color(naranja)n mientras pasa el cursor */
+
+.menu a.selected::after,
+.menu a:hover::after {
+    opacity: 0.8;
+}
+
+.menu a:hover {
+    color: var(--primary-color);
+}
+
+
+/* configuramos los botones abrir y cerrar menú */
+
+.open-menu,
+.close-menu {
+    display: none;
+}
+
+.logotype {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* configuracion dispositivos mobiles */
+
+@media (max-width: 950px) {
+    /* Menu version mobil*/
+    .menu {
+        /* menu en column */
+        flex-direction: column;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        align-items: center;
+        background-color: var(--menu-mobile-background-color);
+        height: 100%;
+        /* le hacemos scrol al menu con  overflow-y: auto;  */
+        overflow-y: auto;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s;
+    }
+    .menu li {
+        padding: 0;
+    }
+    /* añadimos stilos a los enlaces que estan dentro del menú */
+    .menu a {
+        color: var(--text-color-inverse);
+        line-height: 70px;
+        font-size: 25px;
+    }
+    /* configuramos los botones abrir y cerrar menú */
+    .open-menu,
+    .close-menu {
+        display: block;
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
+    /* configuramos la opacidad del boton cerrar menú */
+    .close-menu {
+        align-self: flex-end;
+        padding: 20px 15px;
+    }
+    /* cuando el menu este abierto con js lo configuramos*/
+    .menu_opened {
+        opacity: 1;
+        pointer-events: all;
+    }
+    /* es el foco cuando uno va con la tecla tab para que no se vea las linea al icono hamburguesa */
+    .open-menu:focus:not(:focus-visible),
+    .close-menu:focus:not(:focus-visible) {
+        outline: none;
+    }
+    .menu a::after {
+        content: none;
+    }
+    /* hacemos que cuando un s¿elemento sea seleccionado este cambie de color, hacemos que solo el menu seleccionado se ponga de otro color(naranja) mientras pasa el cursor */
+    .menu a:hover,
+    .menu a.selected {
+        color: var(--secundary-color);
+    }
+}
